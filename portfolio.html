@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Sukh Homes & Renovations Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="padding-top: 60px;">
+        <section class="section-padding">
+            <div class="section-title-wrapper">
+                <h1 class="section-title">Our Project Gallery</h1>
+                <p style="font-size: 16px; color: var(--color-medium-gray);">A selection of our finest residential and commercial transformations.</p>
+            </div>
+            
+            <div class="gallery-grid" style="margin-bottom: 60px;">
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+                <div class="gallery-item-wrap"><div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div></div>
+            </div>
+
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <h3 style="font-size: 24px; margin-bottom: 15px;">Ready to start your project?</h3>
+                <a href="contact.html" class="btn">Get an Estimate</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('header.html').then(r => r.text()).then(data => { document.getElementById('header-placeholder').innerHTML = data; const h = document.getElementById('hamburger-btn'); const m = document.getElementById('mobile-menu'); const c = document.getElementById('close-btn'); if(h) h.addEventListener('click', () => m.classList.add('open')); if(c) c.addEventListener('click', () => m.classList.remove('open')); });
+        fetch('footer.html').then(r => r.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>

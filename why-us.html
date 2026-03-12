@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Choose Us | Sukh Homes & Renovations Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray">
+    <div id="header-placeholder"></div>
+
+    <main style="padding-top: 60px; padding-bottom: 100px;">
+        <section class="section-padding-sm">
+            <div class="section-title-wrapper" style="margin-bottom: 50px;">
+                <h1 class="section-title">Why Choose Sukh Homes?</h1>
+                <p style="font-size: 16px; color: var(--color-medium-gray);">Built on trust, quality, and an unwavering attention to detail.</p>
+            </div>
+            <div class="values-grid">
+                
+                <div class="value-card">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <h3>Professional & Reliable</h3>
+                    <p>We are dedicated to providing honest, transparent, and prompt service from the initial quote to the final walkthrough.</p>
+                </div>
+                
+                <div class="value-card">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <h3>Quality Workmanship</h3>
+                    <p>Our skilled craftsmen use the best materials and techniques to ensure your renovation stands the test of time.</p>
+                </div>
+                
+                <div class="value-card">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                    <h3>Attention to Detail</h3>
+                    <p>We believe perfection is in the details, resulting in clean finishing and flawless execution on every job site.</p>
+                </div>
+                
+                <div class="value-card">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    <h3>Transparent Pricing</h3>
+                    <p>No hidden fees. We provide clear, honest estimates so you know exactly what your project will cost.</p>
+                </div>
+                
+                <div class="value-card">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16.05A2.9 2.9 0 0 0 18.95 21 2.9 2.9 0 0 0 16.05 18.95 2.9 2.9 0 0 0 18.95 16.05z"></path><path d="M5 6.05A2.9 2.9 0 0 0 2.95 11 2.9 2.9 0 0 0 5.05 8.95 2.9 2.9 0 0 0 2.95 6.05z"></path><path d="M12 2v20"></path><path d="M2 12h20"></path></svg>
+                    <h3>Clean Job Sites</h3>
+                    <p>We treat your property with the utmost respect, maintaining organized, safe, and clean work environments daily.</p>
+                </div>
+                
+                <div class="value-card">
+                    <svg class="value-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <h3>Customer Focused</h3>
+                    <p>Your satisfaction is our ultimate goal. We are committed to delivering solutions that enhance your property's value.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('header.html').then(r => r.text()).then(data => { document.getElementById('header-placeholder').innerHTML = data; const h = document.getElementById('hamburger-btn'); const m = document.getElementById('mobile-menu'); const c = document.getElementById('close-btn'); if(h) h.addEventListener('click', () => m.classList.add('open')); if(c) c.addEventListener('click', () => m.classList.remove('open')); });
+        fetch('footer.html').then(r => r.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>

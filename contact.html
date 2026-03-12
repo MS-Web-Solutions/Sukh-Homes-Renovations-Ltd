@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sukh Homes & Renovations Ltd.</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main style="padding-top: 90px; min-height: 80vh; display: flex; align-items: center;">
+        <section class="section-padding" style="width: 100%;">
+            <div class="contact-container">
+                
+                <div class="contact-info">
+                    <p style="text-transform: uppercase; font-size: 13px; font-weight: 600; color: var(--color-accent); letter-spacing: 1.5px; margin-bottom: 10px;">Get In Touch</p>
+                    <h1 class="section-title" style="text-align: left; margin-bottom: 20px;">Let's build your dream space.</h1>
+                    <p style="font-size: 16px; margin-bottom: 40px; color: var(--color-medium-gray);">Have a project in mind? Reach out to us today to discuss your renovation needs and request a free, no-obligation estimate.</p>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <p style="font-size: 14px; color: var(--color-medium-gray); margin-bottom: 5px;">Direct Contact</p>
+                        <p style="font-size: 18px; font-weight: 600; color: var(--color-black);">Sukhwinder Dhillon</p>
+                        <p style="font-size: 18px; font-weight: 700; color: var(--color-accent);">+1 (647) 978-7746</p>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <p style="font-size: 14px; color: var(--color-medium-gray); margin-bottom: 5px;">Follow Our Work</p>
+                        <a href="https://instagram.com/sukhhomesltd" target="_blank" style="font-size: 16px; color: var(--color-black); display: flex; align-items: center; gap: 8px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-black)'">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                            @sukhhomesltd
+                        </a>
+                    </div>
+
+                    <div>
+                        <p style="font-size: 14px; color: var(--color-medium-gray); margin-bottom: 5px;">Service Areas</p>
+                        <p style="font-size: 15px; color: var(--color-black); font-weight: 500;">Brampton, Mississauga, Milton, Halton Hills & the GTA</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper" style="background-color: var(--color-light-gray); padding: 40px; border-radius: 8px; border: 1px solid var(--color-border);">
+                    <h3 style="font-size: 22px; margin-bottom: 25px; color: var(--color-black); font-weight: 600;">Request an Estimate</h3>
+                    <form action="https://formsubmit.co/info@sukhhomes.ca" method="POST" class="estimate-form">
+                        <div class="form-row">
+                            <input type="text" name="Full Name" placeholder="Full Name*" required style="background-color: var(--color-white);">
+                            <input type="tel" name="Phone" placeholder="Phone number*" required style="background-color: var(--color-white);">
+                        </div>
+                        <div class="form-row">
+                            <input type="email" name="Email" placeholder="Email*" required style="background-color: var(--color-white);">
+                            <input type="text" name="Location" placeholder="City (e.g. Brampton)*" required style="background-color: var(--color-white);">
+                        </div>
+                        <textarea name="Description" rows="6" placeholder="Briefly describe your renovation project...*" required style="background-color: var(--color-white);"></textarea>
+                        
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const closeBtn = document.getElementById('close-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+
+                if (hamburgerBtn && mobileMenu) {
+                    hamburgerBtn.addEventListener('click', () => {
+                        mobileMenu.classList.add('open');
+                        document.body.style.overflow = 'hidden'; 
+                    });
+                }
+                
+                if (closeBtn && mobileMenu) {
+                    closeBtn.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        document.body.style.overflow = 'clip'; 
+                    });
+                }
+                
+                if (mobileLinks && mobileMenu) {
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.remove('open');
+                            document.body.style.overflow = 'clip';
+                        });
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>

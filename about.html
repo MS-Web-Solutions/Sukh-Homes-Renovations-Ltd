@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Sukh Homes & Renovations Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="padding-top: 60px; min-height: 70vh;">
+        <section class="section-padding">
+            <div class="section-title-wrapper" style="margin-bottom: 30px;">
+                <h1 class="section-title">About Sukh Homes</h1>
+            </div>
+            <div class="text-container about-section" style="margin-top: 0; background: var(--color-white); border-color: transparent; box-shadow: none;">
+                <p><strong>Sukh Homes & Renovations Ltd.</strong> is a professional renovation company providing high-quality residential and commercial renovation services. We take pride in delivering reliable workmanship, honest service, and results that improve both the functionality and value of your property.</p>
+                <p>Our team is committed to helping homeowners and businesses transform their spaces through thoughtful design, quality materials, and skilled craftsmanship. Whether it is a small renovation or a full property upgrade, we focus on completing every project with attention to detail and customer satisfaction.</p>
+                <p>At Sukh Homes & Renovations Ltd., our goal is to create modern, comfortable, and durable spaces that meet our clients’ needs and expectations.</p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gray">
+            <div class="section-title-wrapper"><h2 class="section-title">Our Mission</h2></div>
+            <div class="text-container">
+                <p>To provide high-quality renovation services that improve homes and businesses while building long-term relationships with our clients through trust, reliability, and excellent workmanship.</p>
+                <div style="margin-top: 40px;">
+                    <a href="contact.html" class="btn">Work With Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html').then(r => r.text()).then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeBtn = document.getElementById('close-btn');
+            if(hamburgerBtn) hamburgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+            if(closeBtn) closeBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        });
+        fetch('footer.html').then(r => r.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>

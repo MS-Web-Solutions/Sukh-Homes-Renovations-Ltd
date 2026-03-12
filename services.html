@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Sukh Homes & Renovations Ltd.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main style="padding-top: 60px;">
+        <section class="section-padding">
+            <div class="section-title-wrapper">
+                <h1 class="section-title">Our Renovation Services</h1>
+                <p style="font-size: 16px; color: var(--color-medium-gray);">Comprehensive remodeling solutions for residential and commercial properties.</p>
+            </div>
+            
+            <div class="services-grid">
+                <a href="contact.html" class="service-card">
+                    <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-overlay"></div>
+                    <div class="service-content">
+                        <h3>Basement Renovations</h3>
+                        <ul><li>Basement finishing</li><li>Legal basement apartments</li><li>Rental basement units</li></ul>
+                        <span>Get Quote</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="service-card">
+                    <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-overlay"></div>
+                    <div class="service-content">
+                        <h3>Kitchen Renovations</h3>
+                        <ul><li>Kitchen remodeling</li><li>Cabinet installation & upgrades</li><li>Countertop installation</li></ul>
+                        <span>Get Quote</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="service-card">
+                    <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-overlay"></div>
+                    <div class="service-content">
+                        <h3>Bathroom Renovations</h3>
+                        <ul><li>Shower & bathtub upgrades</li><li>Tile installation</li><li>Vanity installation</li></ul>
+                        <span>Get Quote</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="service-card">
+                    <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-overlay"></div>
+                    <div class="service-content">
+                        <h3>Flooring Installation</h3>
+                        <ul><li>Hardwood flooring</li><li>Vinyl flooring</li><li>Tile flooring</li></ul>
+                        <span>Get Quote</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="service-card">
+                    <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-overlay"></div>
+                    <div class="service-content">
+                        <h3>Interior & Home Impr.</h3>
+                        <ul><li>Drywall, framing & painting</li><li>Pot lights & open concept</li><li>Window & door installation</li></ul>
+                        <span>Get Quote</span>
+                    </div>
+                </a>
+                <a href="contact.html" class="service-card">
+                    <div class="service-bg" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="service-overlay"></div>
+                    <div class="service-content">
+                        <h3>Commercial Renovations</h3>
+                        <ul><li>Office renovations</li><li>Retail space upgrades</li><li>Interior remodeling</li></ul>
+                        <span>Get Quote</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gray">
+            <div class="section-title-wrapper">
+                <p style="text-transform: uppercase; font-size: 13px; font-weight: 600; color: var(--color-accent); letter-spacing: 1.5px; margin-bottom: 10px;">Step-by-step</p>
+                <h2 class="section-title">Our Process</h2>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step"><div class="step-number">Step 01</div><h4>Free Consult</h4><p>Meet with a Renovation Expert who assesses your needs and provides an itemized proposal.</p></div>
+                <div class="process-step"><div class="step-number">Step 02</div><h4>Design</h4><p>We guide you through the process of selecting materials, fittings and fixtures to match your vision.</p></div>
+                <div class="process-step"><div class="step-number">Step 03</div><h4>Permits</h4><p>We'll manage all local permits and paperwork, and expedite approvals needed for construction.</p></div>
+                <div class="process-step"><div class="step-number">Step 04</div><h4>Construction</h4><p>Your personal Project Manager oversees construction and ensures every detail is completed.</p></div>
+                <div class="process-step"><div class="step-number">Step 05</div><h4>Quality Assurance</h4><p>We assess every detail of the completed renovation project to ensure it meets our standard.</p></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('header.html').then(r => r.text()).then(data => { document.getElementById('header-placeholder').innerHTML = data; const h = document.getElementById('hamburger-btn'); const m = document.getElementById('mobile-menu'); const c = document.getElementById('close-btn'); if(h) h.addEventListener('click', () => m.classList.add('open')); if(c) c.addEventListener('click', () => m.classList.remove('open')); });
+        fetch('footer.html').then(r => r.text()).then(data => document.getElementById('footer-placeholder').innerHTML = data);
+    </script>
+</body>
+</html>
