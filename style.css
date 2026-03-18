@@ -221,11 +221,17 @@ footer { background-color: var(--color-black); color: var(--color-white); paddin
     .mobile-call-btn, .mobile-insta-btn { display: flex; align-items: center; justify-content: center; padding: 0; color: var(--color-black); }
     .mobile-call-btn svg, .mobile-insta-btn svg { width: 18px; height: 18px; }
     
-    /* Logo Blue Mobile Button */
+    /* Logo Blue Mobile Button (Smaller Size) */
     .mobile-estimate-btn {
         background-color: var(--color-accent); color: var(--color-white);
-        font-size: 11px; font-weight: 500; text-align: center;
-        line-height: 1.3; letter-spacing: 2px; padding: 10px 14px; border-radius: 0;
+        font-size: 9px; /* Reduced font size */
+        font-weight: 600; /* Made slightly bolder to keep it readable */
+        text-align: center;
+        line-height: 1.2; 
+        letter-spacing: 1px; /* Tighter letter spacing */
+        padding: 6px 10px; /* Reduced padding to make the box smaller */
+        border-radius: 0;
+        white-space: nowrap; 
     }
 
     /* THE HAMBURGER MENU BUTTON */
