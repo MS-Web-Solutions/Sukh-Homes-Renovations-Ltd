@@ -1,13 +1,16 @@
 /* --- Google Fonts Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
 
-/* --- Color Palette (Updated with Sukh Homes Logo Blue) --- */
+/* --- Color Palette (Updated with Cool Icy Grey to match Blue) --- */
 :root {
     --color-black: #1a1a1a;
     --color-dark-gray: #2d2d2d;
     --color-medium-gray: #666666;
-    --color-light-gray: #e6e3dd; /* Warm Beige Background */
-    --color-border: #d8d4cd;     /* Tinted Warm Border */
+    
+    /* THESE TWO LINES CHANGED TO COOL TONES */
+    --color-light-gray: #f2f7fa; /* Sleek, Icy Light Blue-Grey */
+    --color-border: #e2e8ec;     /* Cool, soft border to match */
+    
     --color-white: #ffffff;
     --color-accent: #00A8E8;     /* Sukh Homes Logo Blue */
     --font-primary: 'Jost', sans-serif;
