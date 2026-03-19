@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Sukh Homes & Renovations Ltd.</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main style="min-height: 65vh; display: flex; align-items: center; justify-content: center; background-color: var(--color-light-gray); padding: 40px 4%;">
+        
+        <div class="text-container" style="background: var(--color-white); padding: 60px 5%; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border-top: 4px solid var(--color-accent); border-left: 1px solid var(--color-border); border-right: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); max-width: 650px; width: 100%;">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 72px; height: 72px; margin-bottom: 25px;">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            
+            <h1 class="section-title" style="margin-bottom: 15px; font-size: 32px;">Estimate Request Sent!</h1>
+            
+            <p style="font-size: 16px; color: var(--color-medium-gray); margin-bottom: 35px; line-height: 1.8;">
+                Thank you for reaching out to <strong>Sukh Homes & Renovations Ltd.</strong> We have successfully received your project details. Sukhwinder will review your information and be in touch with you shortly to discuss your free estimate.
+            </p>
+            
+            <a href="index.html" class="btn" style="width: 100%; max-width: 300px;">Return to Homepage</a>
+            
+        </div>
+        
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const closeBtn = document.getElementById('close-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+
+                if (hamburgerBtn && mobileMenu) {
+                    hamburgerBtn.addEventListener('click', () => {
+                        mobileMenu.classList.add('open');
+                        document.body.style.overflow = 'hidden'; 
+                    });
+                }
+                
+                if (closeBtn && mobileMenu) {
+                    closeBtn.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        document.body.style.overflow = ''; 
+                    });
+                }
+                
+                if (mobileLinks && mobileMenu) {
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                            mobileMenu.classList.remove('open');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    </script>
+</body>
+</html>

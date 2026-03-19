@@ -1,16 +1,13 @@
 /* --- Google Fonts Import --- */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
 
-/* --- Color Palette (Updated with Cool Icy Grey to match Blue) --- */
+/* --- Color Palette --- */
 :root {
     --color-black: #1a1a1a;
     --color-dark-gray: #2d2d2d;
     --color-medium-gray: #666666;
-    
-    /* THESE TWO LINES CHANGED TO COOL TONES */
     --color-light-gray: #f2f7fa; /* Sleek, Icy Light Blue-Grey */
     --color-border: #e2e8ec;     /* Cool, soft border to match */
-    
     --color-white: #ffffff;
     --color-accent: #00A8E8;     /* Sukh Homes Logo Blue */
     --font-primary: 'Jost', sans-serif;
@@ -65,7 +62,7 @@ header {
 .mobile-menu-overlay {
     position: fixed; 
     top: 0; 
-    bottom: 0; /* This strictly locks it to the visible screen frame */
+    bottom: 0; /* Strictly locks it to the visible screen frame */
     right: -100%; 
     width: 100%; 
     background-color: var(--color-white); 
@@ -79,24 +76,24 @@ header {
 .mobile-menu-header { 
     display: flex; justify-content: space-between; align-items: center; 
     padding: 0 4%; height: 80px; border-bottom: 1px solid var(--color-border); 
-    flex-shrink: 0; /* Prevents the header from getting squished */
+    flex-shrink: 0; 
 }
 .close-menu { background: transparent; border: none; font-size: 40px; font-weight: 300; color: var(--color-black); cursor: pointer; padding-bottom: 5px; }
 
-/* THE SECRET: Only this middle section is allowed to scroll */
+/* ONLY this middle section scrolls */
 .mobile-nav-links { 
     display: flex; flex-direction: column; padding: 20px 4%; 
     flex: 1; /* Pushes the footer strictly to the bottom */
-    overflow-y: auto; /* Adds a scrollbar here if the phone is very small */
+    overflow-y: auto; 
 }
 .mobile-nav-links a { font-size: 24px; font-weight: 600; color: var(--color-black); margin-bottom: 20px; transition: color 0.3s ease; }
 .mobile-nav-links a:hover { color: var(--color-accent); }
 
 .mobile-menu-footer { 
-    padding: 20px 4% 30px; /* Added extra padding at the bottom for the iPhone swipe bar */
+    padding: 20px 4% 30px; 
     background: var(--color-light-gray); 
     border-top: 1px solid var(--color-border); 
-    flex-shrink: 0; /* Prevents the footer from getting squished */
+    flex-shrink: 0; 
 }
 .mobile-phone { font-size: 20px; font-weight: 600; color: var(--color-black); margin-bottom: 5px; display: block; }
 
@@ -133,39 +130,84 @@ header {
 .section-title { font-size: 36px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 15px; color: var(--color-black); }
 .bg-gray { background-color: var(--color-light-gray); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
 
-/* --- Trust Banner --- */
-.trust-banner {
-    background-color: var(--color-dark-gray);
-    color: var(--color-white);
-    text-align: center;
-    padding: 24px 4%;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    border-bottom: 4px solid var(--color-accent); /* Terracotta bottom border */
-}
-.trust-banner .divider {
-    color: var(--color-accent); /* Terracotta color for the | symbols */
-    margin: 0 20px;
-    font-weight: 300;
-}
-
-/* Make it fit nicely on mobile screens */
-@media (max-width: 768px) {
-    .trust-banner {
-        font-size: 12px;
-        letter-spacing: 1.5px;
-        padding: 20px 4%;
-    }
-    .trust-banner .divider {
-        margin: 0 10px;
-    }
-}
-
 /* Text Layouts */
 .text-container { max-width: 900px; margin: 0 auto; text-align: center; }
 .text-container p { font-size: 16px; color: var(--color-medium-gray); line-height: 1.8; margin-bottom: 20px; }
+
+/* --- Floating Reviews Scrolling Marquee (Left to Right) --- */
+.floating-reviews-wrapper {
+    max-width: 100%; 
+    margin: -60px auto 40px; 
+    position: relative;
+    z-index: 10; 
+    overflow: hidden; 
+    padding: 10px 0; 
+}
+
+.reviews-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    animation: scrollLeftToRight 35s linear infinite; 
+}
+
+.floating-reviews-wrapper:hover .reviews-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollLeftToRight {
+    0% { transform: translateX(-50%); } 
+    100% { transform: translateX(0); }  
+}
+
+.review-card {
+    width: 380px; 
+    flex-shrink: 0; 
+    background-color: var(--color-light-gray); /* Matches the icy-grey About Us section */
+    padding: 30px 25px; 
+    border-radius: 8px;
+    border: 1px solid var(--color-border); /* Adds a crisp, subtle outline */
+    border-top: 4px solid var(--color-accent); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Very soft default shadow */
+    text-align: left;
+    transition: all 0.4s ease; /* Smoothed out the animation timing */
+}
+
+/* THE NEW EFFECT: Lifts up higher and casts a soft blue glow! */
+.review-card:hover { 
+    transform: translateY(-8px); 
+    box-shadow: 0 20px 40px rgba(0, 168, 232, 0.15); 
+}
+
+.review-card .stars { 
+    color: #FFD700; 
+    font-size: 22px; 
+    margin-bottom: 12px; 
+    letter-spacing: 2px; 
+}
+
+.review-text { 
+    font-size: 14px; 
+    color: var(--color-medium-gray); /* Switched back to dark grey for readability */
+    line-height: 1.6; 
+    margin-bottom: 20px; 
+    font-style: italic; 
+    white-space: normal; 
+}
+
+.review-author { 
+    font-size: 15px; 
+    font-weight: 600; 
+    color: var(--color-black); /* Switched back to black */
+}
+
+/* --- Trust Banner --- */
+.trust-banner {
+    background-color: var(--color-dark-gray); color: var(--color-white);
+    text-align: center; padding: 24px 4%; font-size: 15px; font-weight: 500;
+    letter-spacing: 3px; text-transform: uppercase; border-bottom: 4px solid var(--color-accent); 
+}
+.trust-banner .divider { color: var(--color-accent); margin: 0 20px; font-weight: 300; }
 
 /* About Us Section */
 .about-section {
@@ -243,30 +285,24 @@ footer { background-color: var(--color-black); color: var(--color-white); paddin
     /* Mobile Header Icons Layout */
     .mobile-actions { display: flex; align-items: center; gap: 10px; }
     .mobile-call-btn, .mobile-insta-btn { display: flex; align-items: center; justify-content: center; padding: 0; color: var(--color-black); }
-    .mobile-call-btn svg, .mobile-insta-btn svg { width: 18px; height: 18px; }
+    .mobile-call-btn svg, .mobile-insta-btn svg { width: 18px !important; height: 18px !important; }
     
     /* Logo Blue Mobile Button (Smaller Size) */
     .mobile-estimate-btn {
         background-color: var(--color-accent); color: var(--color-white);
-        font-size: 9px; /* Reduced font size */
-        font-weight: 600; /* Made slightly bolder to keep it readable */
-        text-align: center;
-        line-height: 1.2; 
-        letter-spacing: 1px; /* Tighter letter spacing */
-        padding: 6px 10px; /* Reduced padding to make the box smaller */
-        border-radius: 0;
+        font-size: 9px; font-weight: 600; text-align: center;
+        line-height: 1.2; letter-spacing: 1px; padding: 6px 10px; border-radius: 0;
         white-space: nowrap; 
     }
 
     /* THE HAMBURGER MENU BUTTON */
     .hamburger { 
-        display: flex; flex-direction: column; justify-content: space-between; 
+        display: flex !important; flex-direction: column; justify-content: space-between; 
         width: 28px; height: 20px; background: transparent; border: none; 
         cursor: pointer; padding: 0; flex-shrink: 0;
     }
     .hamburger .bar { 
-        width: 100%; height: 3px; background-color: var(--color-black); 
-        border-radius: 2px; 
+        width: 100%; height: 3px; background-color: var(--color-black); border-radius: 2px; 
     }
 
     .services-grid { grid-template-columns: 1fr; }
@@ -277,6 +313,10 @@ footer { background-color: var(--color-black); color: var(--color-white); paddin
 }
 
 @media (max-width: 768px) {
+    .floating-reviews-wrapper { margin-top: -40px; }
+    .trust-banner { font-size: 12px; letter-spacing: 1.5px; padding: 20px 4%; }
+    .trust-banner .divider { margin: 0 10px; }
+    
     .footer-top { grid-template-columns: 1fr; }
     .contact-container { grid-template-columns: 1fr; gap: 40px; }
     .form-row { grid-template-columns: 1fr; }
