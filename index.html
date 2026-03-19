@@ -268,7 +268,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
+   <script>
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
@@ -282,6 +282,7 @@
                 if (hamburgerBtn && mobileMenu) {
                     hamburgerBtn.addEventListener('click', () => {
                         mobileMenu.classList.add('open');
+                        // Stops background from scrolling when menu is open
                         document.body.style.overflow = 'hidden'; 
                     });
                 }
@@ -289,7 +290,8 @@
                 if (closeBtn && mobileMenu) {
                     closeBtn.addEventListener('click', () => {
                         mobileMenu.classList.remove('open');
-                        document.body.style.overflow = 'clip'; 
+                        // Restores normal scrolling!
+                        document.body.style.overflow = ''; 
                     });
                 }
                 
@@ -297,7 +299,8 @@
                     mobileLinks.forEach(link => {
                         link.addEventListener('click', () => {
                             mobileMenu.classList.remove('open');
-                            document.body.style.overflow = 'clip';
+                            // Restores normal scrolling!
+                            document.body.style.overflow = '';
                         });
                     });
                 }
